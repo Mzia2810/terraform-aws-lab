@@ -1,0 +1,10 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+terraform.tfstate
+terraform.tfstate.backup
+
+# macOS
+.DS_Store
