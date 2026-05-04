@@ -17,3 +17,17 @@ module "vpc" {
   ]
 
 }
+
+
+
+module "ec2" {
+  source = "../../modules/ec2"
+
+  vpc_id            = module.vpc.vpc_id
+  public_subnet_id  = module.vpc.public_subnet_ids[0]
+  private_subnet_id = module.vpc.private_subnet_ids[0]
+
+  public_sg_id  = module.vpc.public_sg_id
+  private_sg_id = module.vpc.private_sg_id
+
+}
