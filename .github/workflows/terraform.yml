@@ -33,8 +33,7 @@ jobs:
 
       - name: Clean Terraform
         run: rm -rf .terraform
-      - name: Terraform Init
-        run: terraform init -reconfigure
+     
 
       # 4. Terraform Init
       - name: Terraform Init
