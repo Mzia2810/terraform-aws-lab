@@ -52,4 +52,7 @@ module "ecs" {
 
   public_subnet_ids = module.vpc.public_subnet_ids
   public_sg_id      = module.vpc.public_sg_id
+
+ region    = var.region
+
 }
