@@ -30,8 +30,6 @@ module "ec2" {
   private_subnet_id = module.vpc.private_subnet_ids[0]
 
 
-  image_url = "${module.ecr.repository_url}:latest"
-
   public_sg_id  = module.vpc.public_sg_id
   private_sg_id = module.vpc.private_sg_id
 
@@ -39,9 +37,19 @@ module "ec2" {
 
 
 
-
 module "ecr" {
   source = "../../modules/ecr"
 
   repository_name = "my-app-repo"
+}
+
+
+
+module "ecs" {
+  source = "../../modules/ecs"
+
+  image_url = "${module.ecr.repository_url}:latest"
+
+  public_subnet_ids = module.vpc.public_subnet_ids
+  public_sg_id      = module.vpc.public_sg_id
 }
