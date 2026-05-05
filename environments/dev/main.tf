@@ -29,4 +29,7 @@ module "ec2" {
   public_subnet_id  = module.vpc.public_subnet_ids[0]
   private_subnet_id = module.vpc.private_subnet_ids[0]
 
+  public_sg_id  = module.vpc.public_sg_id
+  private_sg_id = module.vpc.private_sg_id
+
 }
