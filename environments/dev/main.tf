@@ -33,3 +33,12 @@ module "ec2" {
   private_sg_id = module.vpc.private_sg_id
 
 }
+
+
+
+
+module "ecr" {
+  source = "../../modules/ecr"
+
+  repository_name = "my-app-repo"
+}
